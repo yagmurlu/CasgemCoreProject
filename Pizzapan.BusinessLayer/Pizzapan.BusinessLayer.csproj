@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Messages\" />
+    <Folder Include="ValidationRules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pizzapan.DataAccessLayer\Pizzapan.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>
