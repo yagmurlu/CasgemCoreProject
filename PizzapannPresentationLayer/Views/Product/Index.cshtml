@@ -1,0 +1,30 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürünler</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.CategoryId</td>
+            <td><a href="/Product/DeleteProduct/@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Product/EditProduct/@item.CategoryId" class="btn btn-outline-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Product/AddProduct/" class="btn btn-outline-success"> Yeni Ürün Ekle</a>

@@ -21,8 +21,8 @@
             <td>@item.CategoryName</td>
             <td><a href="#" class="btn btn-outline-info">Kategori Ürünleri</a></td>
             <td><a href="#" class="btn btn-outline-primary">Sitede Gör</a></td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-warning">Güncelle</a></td>
+            <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Category/EditCategory/@item.CategoryId" class="btn btn-outline-warning">Güncelle</a></td>
         </tr>
     }
 </table>
