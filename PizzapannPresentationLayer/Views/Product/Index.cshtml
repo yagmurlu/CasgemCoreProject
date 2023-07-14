@@ -7,7 +7,7 @@
 <h1>Ürünler</h1>
 
 <table class="table table-bordered">
-    <tr>
+    <tr style="background-color:blueviolet ; text-align:center">
         <th>#</th>
         <th>Ürün Adı</th>
         <th>Fiyat</th>
@@ -17,13 +17,13 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="background-color:wheat; text-align:center">
             <td>@item.ProductId</td>
             <td>@item.Name</td>
             <td>@item.Price</td>
-            <td>@item.CategoryId</td>
-            <td><a href="/Product/DeleteProduct/@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Product/EditProduct/@item.CategoryId" class="btn btn-outline-warning">Güncelle</a></td>
+            <td>@item.category.CategoryName</td>
+            <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Product/EditProduct/@item.ProductId" class="btn btn-outline-dark">Güncelle</a></td>
         </tr>
     }
 </table>

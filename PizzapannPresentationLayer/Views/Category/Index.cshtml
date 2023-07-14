@@ -6,7 +6,7 @@
 
 <h1>Kategori Listesi</h1>
 <table class="table table-bordered">
-    <tr>
+    <tr style="background-color:blueviolet; text-align:center">
         <th>#</th>
         <th>Kategori Adı</th>
         <th>Kategori Ürünleri</th>
@@ -16,13 +16,13 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="background-color:wheat; text-align:center">
             <td>@item.CategoryId</td>
             <td>@item.CategoryName</td>
             <td><a href="#" class="btn btn-outline-info">Kategori Ürünleri</a></td>
             <td><a href="#" class="btn btn-outline-primary">Sitede Gör</a></td>
             <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Category/EditCategory/@item.CategoryId" class="btn btn-outline-warning">Güncelle</a></td>
+            <td><a href="/Category/EditCategory/@item.CategoryId" class="btn btn-outline-dark">Güncelle</a></td>
         </tr>
     }
 </table>

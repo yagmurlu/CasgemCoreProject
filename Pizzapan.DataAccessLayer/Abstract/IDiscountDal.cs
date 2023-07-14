@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pizzapan.DataAccessLayer.Abstract
 {
-    public interface IProductDal:IGenericDal<Product>
+    public interface IDiscountDal:IGenericDal<Discount>
     {
-        public List<Product> GetProductWithCategory();
     }
 }

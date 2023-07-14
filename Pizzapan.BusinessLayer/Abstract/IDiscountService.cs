@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Pizzapan.BusinessLayer.Abstract
 {
-    public interface IContactService:IGenericService<Contact>
-    { 
-  
-       List<Contact> GetContactBySubjectWithThanks();
+    public interface IDiscountService:IGenericService<Discount>
+    {
+
     }
 }

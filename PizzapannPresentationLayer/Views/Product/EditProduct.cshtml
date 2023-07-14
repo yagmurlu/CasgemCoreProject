@@ -1,0 +1,25 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Product
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Düzenleme Sayfası</h1>
+
+
+<form method="post">
+    <label>Kategori Adı</label>
+    <input type="hidden" asp-for="ProductId" />
+    <input asp-for="Name" class="form-control" style="background-color:antiquewhite" />
+    <br />
+    <label> Açıklama</label>
+    <input asp-for="Description" class="form-control" style="background-color:antiquewhite" />
+    <br />
+    <label>Ürün Fiyatı</label>
+    <input asp-for="Price" class="form-control" style="background-color:antiquewhite" />
+    <br />
+    <label>Kategori Id</label>
+    <input asp-for="CategoryId" class="form-control" style="background-color:antiquewhite" />
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>
