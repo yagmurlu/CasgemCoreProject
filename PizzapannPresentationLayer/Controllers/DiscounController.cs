@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Pizzapan.BusinessLayer.Abstract;
+using Pizzapan.EntityLayer.Concrete;
 using System;
 
 namespace PizzapannPresentationLayer.Controllers
@@ -28,10 +29,18 @@ namespace PizzapannPresentationLayer.Controllers
 
             return View();
         }
-       
-        //public IActionResult CreateCode()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult CreateCode(Discount discount)
+        {
+            discount.DiscountFirstCodeDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            discount.DiscountDeadlineCodeDate = Convert.ToDateTime(DateTime.Now.AddDays(3));
+            _discountService.TInsert(discount);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Index()
+        {
+            var values = _discountService.TGetList();
+            return View(values);
+        }
     }
 }
