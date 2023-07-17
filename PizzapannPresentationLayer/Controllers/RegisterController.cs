@@ -38,26 +38,28 @@ namespace PizzapannPresentationLayer.Controllers
             };
             if (model.Password==model.ConfirmPassword)
             {
-                #region
-                MimeMessage mimeMessage = new MimeMessage();
-                MailboxAddress mailboxAddress = new MailboxAddress("Admin", "aleyna.tumturk403@gmail.com");
-                mimeMessage.From.Add(mailboxAddress);
-                MailboxAddress mailboxAddressTo = new MailboxAddress("User", model.Email);
-                mimeMessage.To.Add(mailboxAddressTo);
-                var bodyBuilder = new BodyBuilder();
-                bodyBuilder.TextBody = "Giriş yapabilmek için onaylama kodunuz:"+ x;
-                mimeMessage.Body = bodyBuilder.ToMessageBody();
-                mimeMessage.Subject = "Doğrulama Kodu";
-
-                SmtpClient smtpClient = new SmtpClient();
-                smtpClient.Connect("smtp.gmail.com", 587, false);
-                smtpClient.Authenticate("aleyna.tumturk403@gmail.com", "eetyzlhnrzoficpl");
-                smtpClient.Send(mimeMessage);
-                smtpClient.Disconnect(true);   
-                #endregion
                 var result = await _userManager.CreateAsync(appUser, model.Password);
                 if (result.Succeeded)
                 {
+                    #region
+                    MimeMessage mimeMessage = new MimeMessage();
+                    MailboxAddress mailboxAddress = new MailboxAddress("Admin", "aleyna.tumturk403@gmail.com");
+                    mimeMessage.From.Add(mailboxAddress);
+                    MailboxAddress mailboxAddressTo = new MailboxAddress("User", model.Email);
+                    mimeMessage.To.Add(mailboxAddressTo);
+                    var bodyBuilder = new BodyBuilder();
+                    bodyBuilder.TextBody = "Giriş yapabilmek için onaylama kodunuz:"+ x;
+                    mimeMessage.Body = bodyBuilder.ToMessageBody();
+                    mimeMessage.Subject = "Doğrulama Kodu";
+
+                    SmtpClient smtpClient = new SmtpClient();
+                    smtpClient.Connect("smtp.gmail.com", 587, false);
+                    smtpClient.Authenticate("aleyna.tumturk403@gmail.com", "eetyzlhnrzoficpl");
+                    smtpClient.Send(mimeMessage);
+                    smtpClient.Disconnect(true);
+                    #endregion
+
+                    TempData["Username"] = appUser.UserName;
                     return RedirectToAction("Index", "Login");
                 }
                 else

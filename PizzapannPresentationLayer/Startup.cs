@@ -46,6 +46,9 @@ namespace PizzapannPresentationLayer
             services.AddScoped<IDiscountService, DiscountManager>();
             services.AddScoped<IDiscountDal, EfDiscountDal>();
 
+            services.AddScoped<IProductImageService, ProductImageManager>();
+            services.AddScoped<IProductImageDal, EfProductImage>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
             services.AddControllersWithViews();
