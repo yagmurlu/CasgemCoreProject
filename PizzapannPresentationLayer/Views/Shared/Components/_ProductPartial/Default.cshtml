@@ -1,0 +1,29 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.Product>
+<section class="w3l-food" id="food">
+    <div class="foods1 py-5">
+        <div class="container py-lg-5 py-md-4">
+            <div class="title-content text-center">
+                <h6 class="sub-title">Özel Teklif</h6>
+                <h3 class="title-big">Lezzetli Pizzalar</h3>
+            </div>
+            <div class="foods1-content mt-lg-5 mt-4 mb-sm-0 mb-4">
+                <div class="owl-carousel owl-theme text-center">
+                    @foreach (var item in Model)
+                    {
+                        <div class="item">
+                        <div class="d-grid food-info">
+                            <div class="column">
+                                <h4 class="name-pos"><a href="#url">@item.Name</a></h4>
+                                <p>@item.Description</p>
+                                <h5>@item.Price</h5>
+                                <a href="#url" class="btn-style btn-primary btn mt-4">Online Sipariş</a>
+                                <a href="#url"><img src=@item.ImageURL alt="" class="img-fluid radius-image mt-4" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

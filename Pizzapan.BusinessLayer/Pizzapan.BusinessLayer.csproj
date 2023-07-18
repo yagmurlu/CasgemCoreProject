@@ -8,10 +8,11 @@
     <Folder Include="Extensions\" />
     <Folder Include="Logging\" />
     <Folder Include="Messages\" />
-    <Folder Include="ValidationRules\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.6.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
   </ItemGroup>

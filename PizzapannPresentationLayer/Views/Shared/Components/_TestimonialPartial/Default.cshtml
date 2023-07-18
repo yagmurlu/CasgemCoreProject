@@ -1,0 +1,39 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.Testimonial>
+<section class="w3l-testimonials" id="testimonials">
+    <div class="testimonials py-5">
+        <div class="container py-lg-5 py-md-4">
+            <div class="title-content text-center">
+                <h6 class="sub-title">Testimonials</h6>
+                <h3 class="title-big">What our Clients say</h3>
+            </div>
+            <div class="row mt-lg-5 mt-4">
+                <div class="col-md-12 mx-auto">
+                    <div class="owl-two owl-carousel owl-theme">
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="slider-info">
+                                    <div class="message">
+                                        <span class="fa fa-quote-left"></span>
+                                        <h5>
+                                            @item.Comment
+                                        </h5>
+                                        <div class="name mt-4">
+                                            <h4>@item.CustomerName</h4>
+                                            <p>@item.CustomerTitle</p>
+                                        </div>
+                                    </div>
+                                    <div class="img-circle">
+                                        <img src=@item.ImageURL class="img-fluid testimonial-img radius-image" alt="client">
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                       
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

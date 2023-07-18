@@ -30,7 +30,7 @@ namespace Pizzapan.BusinessLayer.Concrete
 
         public List<Testimonial> TGetList()
         {
-            throw new NotImplementedException();
+            return _testimonialDal.GetList();
         }
 
         public void TInsert(Testimonial t)
