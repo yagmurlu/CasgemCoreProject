@@ -41,7 +41,7 @@ namespace PizzapannPresentationLayer.Models
             return new IdentityError()
             {
                 Code = "PasswordRequiresNonAlphanumeric",
-                Description = "Lütfen en az 1 tane semnol giriniz."
+                Description = "Lütfen en az 1 tane sembol giriniz."
             };
         }
     }

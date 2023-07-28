@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace PizzapannPresentationLayer.Models
+namespace PizzapannPresentationLayer.Controllers
 {
     public class DefaultController : Controller
     {

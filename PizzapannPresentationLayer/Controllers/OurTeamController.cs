@@ -12,7 +12,7 @@ namespace PizzapannPresentationLayer.Controllers
 
         public OurTeamController(IOurTeamService ourTeamService)
         {
-            ourTeamService = _ourTeamService;
+            _ourTeamService = ourTeamService;
         }
 
         public IActionResult Index()

@@ -1,0 +1,33 @@
+﻿@model OurTeam
+@{
+    ViewData["Title"] = "AddOurTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Tanıtım Üyesi Ekleme</h1>
+
+<form method="post">
+    <label>Adınız</label>
+    <input type="text" asp-for="Name" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label>Soyadınız</label>
+    <input type="text" asp-for="Surname" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Surname" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label>Görsel</label>
+    <input type="text" asp-for="ImageURL" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="ImageURL" class="text-danger"></span>
+    <br />
+@*
+    <label>Durum</label>
+    <input asp-for="Status" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Status" class="text-danger"></span>
+    <br />*@
+    <br />
+    <button class="btn btn-info"> Kaydet</button>
+</form>
