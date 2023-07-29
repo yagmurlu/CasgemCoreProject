@@ -1,29 +1,59 @@
-﻿@model List<Contact>
+﻿
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = null;
 }
 
-<h1>Gelen Mesajlar</h1>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
 
-<table class="table table-bordered">
-    <tr style="background-color:blueviolet; text-align:center">
-        <th>#</th>
-        <th>Gönderen</th>
-        <th>Konu</th>
-        <th>Tarih</th>
-        <th>Mesajı Sil</th>
-        <th>Mesajı Gör </th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.ContactId</td>
-            <td>@item.Name</td>
-            <td>@item.Subject</td>
-            <td>@(((DateTime)item.SendDateMessage).ToString("dd-MMM-yyyy"))</td>
-            <td><a href="/Contact/DeleteContact/@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="/Contact/MessageDetailsContact/@item.ContactId" class="btn btn-outline-dark"> Mesajı Gör</a></td>
-        </tr>
-    }
-</table>
+<head>
+    @await Component.InvokeAsync("_HeadPartial")
+</head>
+
+<body>
+    <!--header-->
+    @await Component.InvokeAsync("_NavbarPartial")
+    <!--/header-->
+    <!-- Domain Modal -->
+    @await Component.InvokeAsync("_SideMenuPartial")
+    <!-- //Domain modal -->
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/Default/Index/">Ansayfa</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> İletişim</li>
+            </ul>
+        </div>
+    </section>
+    <section class="w3l-contact-11 py-5">
+        <div class="contacts-main py-lg-5 py-md-4">
+            <div class="contant11-top-bg">
+                
+                @await Component.InvokeAsync("_ContactSectionPartial")
+            </div>
+            <div class="form-41-mian section-gap mt-5">
+                <div class="container">
+                    <div class="d-grid align-form-map">
+                        
+                        @await Component.InvokeAsync("_FormMessagePartial")
+                        @await Component.InvokeAsync("_MapPartial")
+                        
+                    </div>
+                </div>
+            </div>
+
+    </section>
+    <!-- footers 20 -->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Yukarı Çık">
+        &#10548;
+    </button>
+    @await Component.InvokeAsync("_ScriptPartial")
+</body>
+
+</html>

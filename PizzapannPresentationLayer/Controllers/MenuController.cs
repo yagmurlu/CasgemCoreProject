@@ -2,7 +2,7 @@
 
 namespace PizzapannPresentationLayer.Controllers
 {
-    public class ContactController : Controller
+    public class MenuController : Controller
     {
         public IActionResult Index()
         {

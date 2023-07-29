@@ -1,0 +1,29 @@
+﻿@model List<Contact>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Gelen Mesajlar</h1>
+
+<table class="table table-bordered">
+    <tr style="background-color:blueviolet; text-align:center">
+        <th>#</th>
+        <th>Gönderen</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Mesajı Sil</th>
+        <th>Mesajı Gör </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ContactId</td>
+            <td>@item.Name</td>
+            <td>@item.Subject</td>
+            <td>@(((DateTime)item.SendDateMessage).ToString("dd-MMM-yyyy"))</td>
+            <td><a href="/AdminContact/DeleteContact/@item.ContactId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminContact/MessageDetailsContact/@item.ContactId" class="btn btn-outline-dark"> Mesajı Gör</a></td>
+        </tr>
+    }
+</table>

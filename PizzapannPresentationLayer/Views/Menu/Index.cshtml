@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadPartial")
+
+<body>
+    <!--header-->
+    @await Component.InvokeAsync("_NavbarPartial")
+    <!--/header-->
+    <!-- Domain Modal -->
+    @await Component.InvokeAsync("_SideMenuPartial")
+    <!-- //Domain modal -->
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/Default/Index/">Ansayfa</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Menü</li>
+            </ul>
+        </div>
+    </section>
+    <!-- menu -->
+    <div class="agileits-services  py-5" id="menu">
+        <div class="container py-md-5">
+            <div class="title-content text-center">
+                <h6 class="sub-title">Size Özel Menü</h6>
+                <h3 class="title-big">Sizin İçin Seçtiklerimiz</h3>
+            </div>
+            <div class="pt-lg-5 pt-4">
+                <div class="row menu-body">
+                    <!-- Section starts: Appetizers -->
+                    @await Component.InvokeAsync("_Appetizers1Partial")
+                    
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Appetizers -->
+                    @await Component.InvokeAsync("_Appetizers2Partial")
+                    
+                    <!-- Section ends: Appetizers -->
+                    <!-- Section starts: Drinks -->
+                    @await Component.InvokeAsync("_Appetizers3Partial")
+               
+                    <!-- Section ends: Drinks -->
+                    <!-- Section starts: Drinks -->
+                    @await Component.InvokeAsync("_Appetizers4Partial")
+                   
+                    <!-- Section ends: Drinks -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //menu -->
+    <!-- footers 20 -->
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Yukarı Çık">
+        &#10548;
+    </button>
+    @await Component.InvokeAsync("_ScriptPartial")
+</body>
+
+</html>
