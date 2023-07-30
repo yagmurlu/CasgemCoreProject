@@ -3,8 +3,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h1>Yeni Resim Ekleme Sayfası</h1>
+@await Component.InvokeAsync("_AdminIndexPartial")
+<br />
+<h5>Yeni Resim Ekleme Sayfası</h5>
 <form method="post" enctype="multipart/form-data">
     <label>Görsel Seçiniz</label>
     <input type="file" class="form-control border" asp-for="Image"/>

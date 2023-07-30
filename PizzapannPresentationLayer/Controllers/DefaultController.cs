@@ -8,5 +8,14 @@ namespace PizzapannPresentationLayer.Controllers
         {
             return View();
         }
+        public IActionResult AdminIndex()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Feature()
+        {
+            return View();
+        }
     }
 }

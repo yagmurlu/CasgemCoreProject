@@ -4,10 +4,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Ürünler</h1>
+@await Component.InvokeAsync("_AdminIndexPartial")
+<br />
+<h5>Ürünler</h5>
 
 <table class="table table-bordered">
-    <tr style="background-color:blueviolet ; text-align:center">
+    <tr style="background-color:chocolate ; text-align:center">
         <th>#</th>
         <th>Ürün Adı</th>
         <th>Fiyat</th>
@@ -27,4 +29,4 @@
         </tr>
     }
 </table>
-<a href="/Product/AddProduct/" class="btn btn-outline-success"> Yeni Ürün Ekle</a>
+<a href="/Product/AddProduct/" class="btn btn-outline-success"> Yeni Ürün</a>

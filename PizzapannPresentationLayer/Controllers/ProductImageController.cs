@@ -34,7 +34,7 @@ namespace PizzapannPresentationLayer.Controllers
             _productImageService.TInsert(productImage);
 
             
-            return RedirectToAction("ImageList");
+            return RedirectToAction("Index");
         }
     }
 }

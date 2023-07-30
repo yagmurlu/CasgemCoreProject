@@ -1,0 +1,35 @@
+﻿@model List<Pizzapan.EntityLayer.Concrete.Testimonial>
+@{
+    ViewData["Title"] = "GetTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_AdminIndexPartial")
+<br />
+<h5>Müşteri Yorumlari</h5>
+<table class="table table-bordered">
+    <tr style="background-color:chocolate; text-align:center">
+        <th>#</th>
+        <th>Müşteri Adı</th>
+        <th>Başlık</th>
+        <th>İçerik</th>
+        <th>Resim</th>
+        <th>Sitede Gör</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="background-color:wheat; text-align:center">
+            <td>@item.TestimonialId</td>
+            <td>@item.CustomerName</td>
+            <td>@item.CustomerTitle</td>
+            <td>@item.Comment</td>
+            <td>@item.ImageURL</td>
+            <td><a href="Default/Index/" class="btn btn-outline-primary">Sitede Gör</a></td>
+            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Testimonial/EditTestimonial/@item.TestimonialId" class="btn btn-outline-dark">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Category/AddCategory/" class="btn btn-outline-success"> Yeni Yorum</a>
