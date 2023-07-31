@@ -2,10 +2,10 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count =0;
+    int count=0;
 }
 
-<h1>Kupon Sayfası</h1>
+<h1 style="text-align:center; color:darkblue">Kupon Sayfası</h1>
 
 <table class="table table-bordered">
     <tr style="background-color:blanchedalmond; text-align:center">
@@ -17,8 +17,9 @@
     </tr>
     @foreach (var item in Model)
     {
+        count++;
         if (item.DiscountDeadlineCodeDate<DateTime.Now)
-        {
+        {   
             <tr style="background-color:crimson; color:white">
                 <td>@count</td>
                 <td>@item.DiscountCode</td>
@@ -38,3 +39,7 @@
         }
     }
 </table>
+<br />
+<hr />
+
+<a href="/Discoun/CreateCode/" class="btn btn-outline-success">Yeni Kupon Oluştur</a>
