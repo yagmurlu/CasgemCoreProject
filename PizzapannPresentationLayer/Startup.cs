@@ -58,6 +58,8 @@ namespace PizzapannPresentationLayer
             services.AddScoped<IBestPizzaService, BestPizzaManager>();
             services.AddScoped<IBestPizzaDal, EfPizzaBestDal>();
 
+            services.AddScoped<IFooterService, FooterManager>();
+            services.AddScoped<IFooterDal, EfFooterDal>();
 
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 

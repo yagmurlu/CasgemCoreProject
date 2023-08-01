@@ -1,0 +1,31 @@
+﻿@model List<Footer>
+@{
+    ViewData["Title"] = "GetFooter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1 style="text-align:center;color:darkblue">İletişim Bilgileri</h1>
+<hr />
+<br />
+<table class="table table-bordered" >
+    <tr style="background-color:lightseagreen; text-align:center">
+        <th>#</th>
+        <th>Adres</th>
+        <th>Email</th>
+        <th>Açılış Saatleri</th>
+        <th>Açılış Günü</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+            <tr style="background-color:wheat; text-align:center">
+                <td>@item.FooterID</td>
+                <td>@item.Address</td>
+                <td>@item.Email</td>
+                <td>@item.OpenHourse</td>
+                <td>@item.OpenDay</td>
+                <td style="text-align:center"><a href="/Footer/EditFooter/@item.FooterID" class="btn btn-primary">Güncelle</a></td>
+            </tr>
+    }
+</table>

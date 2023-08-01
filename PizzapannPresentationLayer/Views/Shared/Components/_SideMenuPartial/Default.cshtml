@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Footer>
 <div class="modal right fade" id="DomainModal" tabindex="-1" role="dialog" aria-labelledby="DomainModalLabel2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -11,33 +11,33 @@
                 <div class="modal__content">
                     <h2 class="logo"> <span class="fa fa-pie-chart"></span> Pizza Pan</h2>
 
-                    <p class="mt-md-3 mt-2">Lorem ipsum dolor sit amet, elit. Eos expedita ipsam at fugiat ab.</p>
+                    
                     <img src="~/pizzapan-starter/assets/images/p1.jpg" alt="image" class="img-fluid radius-image mt-4">
                     <div class="widget-social-icons mt-sm-5 mt-4">
-                        <h5 class="widget-title">Contact Us</h5>
+                        <h5 class="widget-title">İletişime Geçin</h5>
                         <ul class="icon-rounded address">
                             <li>
-                                <p> New York, NY-90814 Hill Station 4th Street</p>
+                                <p>@ViewBag.address</p>
                             </li>
                             <li class="mt-3">
                                 <p><span class="fa fa-phone"></span> <a href="tel:+404-11-22-89">+1-2345-345-678-11</a></p>
                             </li>
                             <li class="mt-2">
                                 <p>
-                                    <span class="fa fa-envelope"></span> <a href="mailto:pizza@order.com">pizza@order.com</a>
+                                    <span class="fa fa-envelope"></span> <a href="mailto:@ViewBag.mail">@ViewBag.mail</a>
                                 </p>
                             </li>
                             <li class="top_li1 mt-2">
                                 <p>
                                     <span class="fa fa-clock-o"></span> <a href="#url">
-                                        Mon - Fri : 09:00 am to 10:00 pm
+                                        @ViewBag.openday : @ViewBag.openhourse
                                     </a>
                                 </p>
                             </li>
                         </ul>
                     </div>
                     <div class="widget-social-icons mt-sm-5 mt-4">
-                        <h5 class="widget-title">Follow Us</h5>
+                        <h5 class="widget-title">Takip Edin</h5>
                         <ul class="icon-rounded">
                             <li><a class="social-link twitter" href="#url" target="_blank"><span class="fa fa-twitter"></span></a></li>
                             <li><a class="social-link linkedin" href="#url" target="_blank"><span class="fa fa-linkedin"></span></a></li>
