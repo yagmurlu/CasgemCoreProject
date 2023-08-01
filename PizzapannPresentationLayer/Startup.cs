@@ -52,6 +52,13 @@ namespace PizzapannPresentationLayer
             services.AddScoped<IOurTeamService, OurTeamManager>();
             services.AddScoped<IOurTeamDal, EfOurTeamDal>();
 
+            services.AddScoped<IFeatureService, FeatureManager>();
+            services.AddScoped<IFeatureDal, EfFeatureDal>();
+
+            services.AddScoped<IBestPizzaService, BestPizzaManager>();
+            services.AddScoped<IBestPizzaDal, EfPizzaBestDal>();
+
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
             services.AddControllersWithViews();

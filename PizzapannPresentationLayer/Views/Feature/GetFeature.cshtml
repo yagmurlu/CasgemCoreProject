@@ -1,0 +1,26 @@
+﻿@model List<Feature>
+@{
+    ViewData["Title"] = "GetFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@await Component.InvokeAsync("_AdminIndexPartial")
+<br />
+<hr />
+<br />
+<table class="table table-bordered" >
+    <tr style="background-color:lightseagreen; text-align:center">
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="background-color:wheat; text-align:center">
+            <td>@item.FeatureID</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td style="text-align:center"><a href="/Feature/EditFeature/@item.FeatureID" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+    }
+</table>

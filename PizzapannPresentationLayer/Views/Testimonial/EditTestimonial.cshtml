@@ -1,0 +1,27 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Testimonial
+@{
+    ViewData["Title"] = "EditTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="text-align:center ;color:darkblue">Müşteri Düşünceleri Düzenleme Sayfası</h1>
+<br />
+<hr />
+<br />
+<form method="post">
+    <label>Müşteri Adı</label>
+    <input type="hidden" asp-for="TestimonialId" />
+    <input type="text" class="form-control" asp-for="CustomerName" style="background-color:cornsilk" />
+
+    <br />
+    <label>Başlık</label>
+    <input type="text" class="form-control" asp-for="CustomerTitle" style="background-color:cornsilk" />
+    <br />
+    <label>Yorum</label>
+    <input type="text" class="form-control" asp-for="Comment" style="background-color:cornsilk" />
+    <br />
+    <label>Resim Url</label>
+    <input type="text" class="form-control" asp-for="ImageURL" style="background-color:cornsilk" />
+    <br />
+    <button class="btn btn-info"> Güncelle</button>
+</form>

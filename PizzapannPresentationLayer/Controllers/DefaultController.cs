@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pizzapan.BusinessLayer.Abstract;
 
 namespace PizzapannPresentationLayer.Controllers
 {
     public class DefaultController : Controller
     {
+        
+
         public IActionResult Index()
         {
             return View();
@@ -12,10 +15,6 @@ namespace PizzapannPresentationLayer.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult Feature()
-        {
-            return View();
-        }
+        
     }
 }

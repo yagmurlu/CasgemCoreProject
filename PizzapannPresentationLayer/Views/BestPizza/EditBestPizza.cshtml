@@ -1,0 +1,34 @@
+﻿@model Pizzapan.EntityLayer.Concrete.BestPizza
+@{
+    ViewData["Title"] = "EditBestPizza";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="text-align:center ;color:darkblue">En İyi Pizza Düzenleme Sayfası</h1>
+<br />
+<hr />
+<br />
+<form method="post">
+    <label>Başlık</label>
+    <input type="hidden" asp-for="BestPizzaID" />
+    <input type="text" class="form-control" asp-for="Title" style="background-color:cornsilk" />
+
+    <br />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="Description" style="background-color:cornsilk" />
+    <br />
+    <label>Başlık-1</label>
+    <input type="text" class="form-control" asp-for="Subtitle1" style="background-color:cornsilk" />
+    <br />
+    <label>Başlık-2</label>
+    <input type="text" class="form-control" asp-for="Subtitle2" style="background-color:cornsilk" />
+    <br />
+    <label>Başlık-3</label>
+    <input type="text" class="form-control" asp-for="Subtitle3" style="background-color:cornsilk" />
+    <label>Başlık-4</label>
+    <input type="text" class="form-control" asp-for="Subtitle4" style="background-color:cornsilk" />
+
+    <br />
+    <br />
+    <button class="btn btn-info"> Güncelle</button>
+</form>

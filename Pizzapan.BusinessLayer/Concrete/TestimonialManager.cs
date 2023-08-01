@@ -20,12 +20,12 @@ namespace Pizzapan.BusinessLayer.Concrete
 
         public void TDelete(Testimonial t)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Delete(t);
         }
 
         public Testimonial TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _testimonialDal.GetById(id);
         }
 
         public List<Testimonial> TGetList()
@@ -35,12 +35,12 @@ namespace Pizzapan.BusinessLayer.Concrete
 
         public void TInsert(Testimonial t)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Insert(t);
         }
 
         public void TUpdate(Testimonial t)
         {
-            throw new NotImplementedException();
+            _testimonialDal.Update(t);
         }
     }
 }

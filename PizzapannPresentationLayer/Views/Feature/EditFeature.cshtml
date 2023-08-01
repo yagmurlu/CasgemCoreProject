@@ -1,0 +1,20 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Feature
+@{
+    ViewData["Title"] = "EditFeature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 style="text-align:center ;color:darkblue">Anasayfa Düzenleme Sayfası</h1>
+<br />
+<hr />
+<br />
+<form method="post">
+    <label>Başlık</label>
+    <input type="hidden" asp-for="FeatureID" />
+    <input type="text" class="form-control" asp-for="Title" style="background-color:cornsilk" />
+
+    <br />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="Description" style="background-color:cornsilk" />
+    <br />
+    <button class="btn btn-info"> Güncelle</button>
+</form>

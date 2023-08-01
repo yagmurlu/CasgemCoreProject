@@ -1,0 +1,35 @@
+﻿@model List<BestPizza>
+@{
+    ViewData["Title"] = "BestPizza";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_AdminIndexPartial")
+<br />
+<hr />
+<br />
+<table class="table table-bordered" >
+    <tr style="background-color:lightseagreen; text-align:center">
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Başlık-1</th>
+        <th>Başlık-2</th>
+        <th>Başlık-3</th>
+        <th>Başlık-4</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+            <tr style="background-color:wheat; text-align:center">
+                <td>@item.BestPizzaID</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Subtitle1</td>
+                <td>@item.Subtitle2</td>
+                <td>@item.Subtitle3</td>
+                <td>@item.Subtitle4</td>
+            <td style="text-align:center"><a href="/BestPizza/EditBestPizza/@item.BestPizzaID" class="btn btn-primary">Güncelle</a></td>
+            </tr>
+    }
+</table>
