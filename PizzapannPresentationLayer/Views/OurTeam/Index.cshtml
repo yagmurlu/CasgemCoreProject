@@ -1,0 +1,40 @@
+﻿@model List<OurTeam>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="text-align:center;color:darkblue">Ekibimiz</h1>
+
+<hr />
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:lightseagreen; text-align:center">
+        <th>#</th>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>Başlık</th>
+        <th>Facebook Adresi</th>
+        <th>Twitter Adresi</th>
+        <th>Resim Url</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="background-color:wheat; text-align:center">
+            <td>@item.OurTeamId</td>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td>@item.Title</td>
+            <td>@item.Facebook</td>
+            <td>@item.Twitter</td>
+            <td>@item.ImageURL</td>
+            <td style="text-align:center"><a href="/OurTeam/EditOurTeam/@item.OurTeamId" class="btn btn-primary">Güncelle</a></td>
+            <td style="text-align:center"><a href="/OurTeam/DeleteOurTeam/@item.OurTeamId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<hr />
+<a href="/OurTeam/AddOurTeam/" class="btn btn-success">Oluştur</a>

@@ -1,0 +1,29 @@
+﻿@model List<Video>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="text-align:center;color:darkblue">Video Düzenleme</h1>
+
+<hr />
+<br />
+<table class="table table-bordered">
+    <tr style="background-color:lightseagreen; text-align:center">
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Video Url</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="background-color:wheat; text-align:center">
+            <td>@item.VideoID</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.VideoUrl</td>
+            <td style="text-align:center"><a href="/Video/EditVideo/@item.VideoID" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+    }
+</table>

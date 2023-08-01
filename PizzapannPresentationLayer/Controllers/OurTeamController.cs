@@ -17,7 +17,8 @@ namespace PizzapannPresentationLayer.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var values=_ourTeamService.TGetList();
+            return View(values);
         }
         [HttpGet]
         public IActionResult AddOurTeam()
@@ -42,6 +43,24 @@ namespace PizzapannPresentationLayer.Controllers
                 }
             }
             return View();
+        }
+        public IActionResult DeleteOurTeam(int id)
+        {
+            var value = _ourTeamService.TGetById(id);
+            _ourTeamService.TDelete(value);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult EditOurTeam(int id)
+        {
+            var value = _ourTeamService.TGetById(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult EditOurTeam(OurTeam ourTeam)
+        {
+            _ourTeamService.TUpdate(ourTeam);
+            return RedirectToAction("Index");
         }
     }
 }

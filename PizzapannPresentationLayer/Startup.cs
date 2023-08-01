@@ -61,6 +61,9 @@ namespace PizzapannPresentationLayer
             services.AddScoped<IFooterService, FooterManager>();
             services.AddScoped<IFooterDal, EfFooterDal>();
 
+            services.AddScoped<IVideoService, VideoManager>();
+            services.AddScoped<IVideoDal, EfVideoDal>();
+
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
             services.AddControllersWithViews();

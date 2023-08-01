@@ -25,5 +25,6 @@ namespace Pizzapan.DataAccessLayer.Concrete
         public DbSet<Feature> Features { get; set; }
         public DbSet<BestPizza> BestPizzas { get; set; }
         public DbSet<Footer> Footers { get; set; }
+        public DbSet<Video> Videos { get; set; }
     }
 }

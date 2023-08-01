@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Gelen Mesajlar</h1>
+<h1 style="text-align:center;color:darkblue">Gelen Mesajlar</h1>
 
 <table class="table table-bordered">
     <tr style="background-color:lightseagreen; text-align:center">
@@ -17,7 +17,7 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="background-color:wheat; text-align:center">
             <td>@item.ContactId</td>
             <td>@item.Name</td>
             <td>@item.Subject</td>

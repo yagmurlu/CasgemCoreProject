@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Yeni Tanıtım Üyesi Ekleme</h1>
+<h1 style="text-align:center;color:darkblue"> Tanıtım Üyesi Ekleme</h1>
 
 <form method="post">
     <label>Adınız</label>
@@ -22,6 +22,14 @@
     <label>Görsel</label>
     <input type="text" asp-for="ImageURL" class="form-control" style="background-color:antiquewhite" />
     <span asp-validation-for="ImageURL" class="text-danger"></span>
+    <br />
+    <label>Facebook Adresi</label>
+    <input type="text" asp-for="Facebook" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Facebook" class="text-danger"></span>
+    <br />
+    <label>Twitter Adresi</label>
+    <input type="text" asp-for="Twitter" class="form-control" style="background-color:antiquewhite" />
+    <span asp-validation-for="Twitter" class="text-danger"></span>
     <br />
 @*
     <label>Durum</label>

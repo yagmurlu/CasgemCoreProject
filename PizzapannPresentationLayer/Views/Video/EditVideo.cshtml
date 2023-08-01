@@ -1,0 +1,26 @@
+﻿@model Pizzapan.EntityLayer.Concrete.Video
+@{
+    ViewData["Title"] = "EditVideo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 style="text-align:center ;color:darkblue">En İyi Pizza Düzenleme Sayfası</h1>
+<br />
+<hr />
+<br />
+<form method="post">
+    <label>Başlık</label>
+    <input type="hidden" asp-for="VideoID" />
+    <input type="text" class="form-control" asp-for="Title" style="background-color:cornsilk" />
+
+    <br />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="Description" style="background-color:cornsilk" />
+    <br />
+    <label>Video Url</label>
+    <input type="text" class="form-control" asp-for="VideoUrl" style="background-color:cornsilk" />
+    <br />
+    
+    <br />
+    <button class="btn btn-info"> Güncelle</button>
+</form>
